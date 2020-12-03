@@ -8,5 +8,5 @@
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="CarShop.Android">
-	<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="zxv" /></application>
+	<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="zxvv" /></application>
 </manifest>

@@ -22,7 +22,7 @@ namespace CarShop.Views
             await DisplayAlert("Agregado", "El Auto se ha agregado", "Aceptar");
             MessagingCenter.Send<Page>(this, "Update");
             await Navigation.PopAsync();
-
+            //
         }
         private async void bMap_Click(object sender, EventArgs e)
         {
