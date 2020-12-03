@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarShop.Views.CarsForSale">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Clicked="onAdd"
+                     Text="Agregar"
+                     Priority="0"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <SearchBar Placeholder="Busca tu vehiculo"
+           CancelButtonColor="Orange"
+           PlaceholderColor="Orange"
+           TextColor="Orange"
+          TextChanged="Handle_SearchButtonPressed"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic"
+                   x:Name="SearchCar"/>
+
+        <ListView x:Name="Carslist" RowHeight = "100">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell ImageSource="{Binding PhotoUrl}"  Text="{Binding Model}" Detail="{Binding Description}">
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

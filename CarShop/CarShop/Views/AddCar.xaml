@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarShop.Views.AddCar">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="eModel" HorizontalOptions="FillAndExpand" Placeholder="Modelo" Keyboard="Text"/>
+            <Entry x:Name="eBrand" HorizontalOptions="FillAndExpand" Placeholder="Marca" Keyboard="Text"/>
+            <Entry x:Name="eYear" HorizontalOptions="FillAndExpand" Placeholder="Año" Keyboard="Numeric"/>
+            <Entry x:Name="eDescription" HorizontalOptions="FillAndExpand" Placeholder="Descripcion" Keyboard="Text"/>
+            <Entry x:Name="ePrice" HorizontalOptions="FillAndExpand" Placeholder="Precio" Keyboard="Numeric"/>
+            <Button x:Name="bAdd" Text="Agregar" Clicked="bAdd_Click"/>
+            <Button x:Name="bMap" Text="map" Clicked="bMap_Click"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
