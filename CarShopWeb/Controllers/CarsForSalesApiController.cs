@@ -15,6 +15,7 @@ namespace CarShopWeb.Controllers
     public class CarsForSalesApiController : ControllerBase
     {
         private readonly CarsDbContext _context;
+        public const string IMAGE_URL = "https://media.wired.com/photos/5d09594a62bcb0c9752779d9/1:1/w_1500,h_1500,c_limit/Transpo_G70_TA-518126.jpg";
 
         public CarsForSalesApiController(CarsDbContext context)
         {
@@ -25,6 +26,16 @@ namespace CarShopWeb.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CarsForSale>>> GetcarsForSales()
         {
+            if (_context.carsForSales.Count() == 0)
+            {
+                _context.carsForSales.AddRange(new List<CarsForSale>{
+               new CarsForSale { Marca = "Chevrolet", Modelo = "Corvette", Precio = 100000.1M , Año = 2010 ,Descripcion  = "Bonito Chevrolet Corvette de 6ta generacion", PhotoUrl = IMAGE_URL },
+                new CarsForSale { Marca  = "Chrysler", Modelo = "200", Año = 2015, Precio = 120000 , Descripcion = "Flamante  200 unico dueño", PhotoUrl = IMAGE_URL },
+                new CarsForSale {  Marca = "Ford", Modelo = "Mustang", Año = 2018, Precio = 220000, Descripcion = "Mustang v6 en excelente estado, 40 mil km", PhotoUrl = IMAGE_URL }
+                });
+                _context.SaveChanges();
+
+            }
             return await _context.carsForSales.ToListAsync();
         }
 

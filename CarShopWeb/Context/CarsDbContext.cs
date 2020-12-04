@@ -9,9 +9,11 @@ namespace CarShopWeb.Context
 {
     public class CarsDbContext: DbContext
     {
+
         public CarsDbContext(DbContextOptions<CarsDbContext> options)
            : base(options)
         {
+
 
         }
         public DbSet<CarsForSale> carsForSales { get; set; }
