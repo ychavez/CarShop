@@ -29,9 +29,9 @@ namespace CarShopWeb.Controllers
             if (_context.carsForSales.Count() == 0)
             {
                 _context.carsForSales.AddRange(new List<CarsForSale>{
-               new CarsForSale { Marca = "Chevrolet", Modelo = "Corvette", Precio = 100000.1M , Año = 2010 ,Descripcion  = "Bonito Chevrolet Corvette de 6ta generacion", PhotoUrl = IMAGE_URL },
-                new CarsForSale { Marca  = "Chrysler", Modelo = "200", Año = 2015, Precio = 120000 , Descripcion = "Flamante  200 unico dueño", PhotoUrl = IMAGE_URL },
-                new CarsForSale {  Marca = "Ford", Modelo = "Mustang", Año = 2018, Precio = 220000, Descripcion = "Mustang v6 en excelente estado, 40 mil km", PhotoUrl = IMAGE_URL }
+               new CarsForSale { Brand = "Chevrolet", Model = "Corvette", Price = 100000.1M , Year = 2010 ,Description  = "Bonito Chevrolet Corvette de 6ta generacion", PhotoUrl = IMAGE_URL },
+                new CarsForSale { Brand  = "Chrysler", Model = "200", Year = 2015, Price = 120000 , Description = "Flamante  200 unico dueño", PhotoUrl = IMAGE_URL },
+                new CarsForSale {  Brand = "Ford", Model = "Mustang", Year = 2018, Price = 220000, Description = "Mustang v6 en excelente estado, 40 mil km", PhotoUrl = IMAGE_URL }
                 });
                 _context.SaveChanges();
 

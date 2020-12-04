@@ -11,11 +11,11 @@ namespace CarShopWeb.Models
 
        [Key]
         public int Id { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public decimal Precio { get; set; }
-        public int Año { get; set; }
-        public string Descripcion { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public decimal Price { get; set; }
+        public int Year { get; set; }
+        public string Description { get; set; }
         public string PhotoUrl { get; set; }
         public float? lat { get; set; }
         public float? Lon { get; set; }

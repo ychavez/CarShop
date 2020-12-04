@@ -26,7 +26,7 @@ namespace CarShop.Views
         {
             DataContext.LoadTestCars();
             Carslist.ItemsSource = null;
-            Carslist.ItemsSource = DataContext.Cars;
+            Carslist.ItemsSource = new RestService().GetCars();
         }
 
         void Handle_SearchButtonPressed(object sender, System.EventArgs e)
