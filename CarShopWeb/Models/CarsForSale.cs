@@ -17,8 +17,8 @@ namespace CarShopWeb.Models
         public int Year { get; set; }
         public string Description { get; set; }
         public string PhotoUrl { get; set; }
-        public float? lat { get; set; }
-        public float? Lon { get; set; }
+        public Double? lat { get; set; }
+        public Double? Lon { get; set; }
 
     }
 }
