@@ -28,6 +28,12 @@
     <Compile Update="Views\GeolocatorPage.xaml.cs">
       <DependentUpon>GeolocatorPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\NearCars.xaml.cs">
+      <DependentUpon>NearCars.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MyInfo.xaml.cs">
+      <DependentUpon>MyInfo.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -40,10 +46,10 @@
     <EmbeddedResource Update="Views\CarsForSale.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MyInfo.xaml">
+    <EmbeddedResource Update="Views\NearCars.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SellCar.xaml">
+    <EmbeddedResource Update="Views\MyInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

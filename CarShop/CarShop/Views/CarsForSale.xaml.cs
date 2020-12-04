@@ -31,7 +31,7 @@ namespace CarShop.Views
 
         void Handle_SearchButtonPressed(object sender, System.EventArgs e)
         {
-            var carsSearched = DataContext.Cars.Where(c => c.Model.ToUpper().Contains(SearchCar.Text.ToUpper()) || c.Description.ToUpper().Contains(SearchCar.Text.ToUpper()) || c.Brand.ToUpper().Contains(SearchCar.Text.ToUpper())).ToList();
+            var carsSearched = new RestService().GetCars().Where(c => c.Model.ToUpper().Contains(SearchCar.Text.ToUpper()) || c.Description.ToUpper().Contains(SearchCar.Text.ToUpper()) || c.Brand.ToUpper().Contains(SearchCar.Text.ToUpper())).ToList();
             Carslist.ItemsSource = carsSearched;
         }
 
