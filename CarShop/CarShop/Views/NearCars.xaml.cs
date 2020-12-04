@@ -37,7 +37,7 @@ namespace CarShop.Views
             var map = new Map(mapSpam);
 
             map.IsShowingUser = true;
-
+            
             //#TODO: REFACTOR AND MULTI PIND / CIRCLE OPTION
 
             Circle circle = new Circle
@@ -56,7 +56,7 @@ namespace CarShop.Views
                 if (!(item.Lon == null || item.lat == null))
                 {
                     var CarPosition = new Xamarin.Forms.Maps.Position(item.lat.Value, item.Lon.Value);
-                    var carPin = new Pin { Type = PinType.Generic, Label = item.Model, Address = item.Description, Position = CarPosition };
+                    var carPin = new Pin { Type = PinType.SearchResult, Label = item.Model, Address = item.Description, Position = CarPosition };
                     map.Pins.Add(carPin);
 
                 }
