@@ -7,7 +7,7 @@ namespace CarShop.Context
 {
     public class DataContext
     {
-       public const string IMAGE_URL = "https://media.wired.com/photos/5d09594a62bcb0c9752779d9/1:1/w_1500,h_1500,c_limit/Transpo_G70_TA-518126.jpg";
+        public const string IMAGE_URL = "https://media.wired.com/photos/5d09594a62bcb0c9752779d9/1:1/w_1500,h_1500,c_limit/Transpo_G70_TA-518126.jpg";
         public static List<Car> Cars { get; set; }
 
         public static void LoadTestCars()
