@@ -27,7 +27,17 @@ namespace CarShop.Context
                 return JsonConvert.DeserializeObject<List<Car>>(content);
             }
             throw new Exception("Error al tratar de obtener la informacion del servicio web");
+        }
 
+        public void SetCars(Car car)
+        {
+            var json = JsonConvert.SerializeObject(car);
+            var Data = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = _client.PostAsync("api/carsForSalesApi", Data).Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Error al tratar de enviar la informacion del servicio web");
+            }  
         }
 
 
