@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CarShop.Views.SellCar">
+             x:Class="CarShop.Views.NearCars">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ActivityIndicator IsVisible="True" IsRunning="True" x:Name="Aindicator">
+                
+            </ActivityIndicator>
+            <Label x:Name="WaitText" Text="Cargando Mapa" HorizontalOptions="Center"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

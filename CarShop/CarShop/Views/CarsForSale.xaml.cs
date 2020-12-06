@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,24 +21,21 @@ namespace CarShop.Views
             MessagingCenter.Subscribe<Page>(this, "Update", messageCallBack);
             Title = "Comprar";
         }
-
-        private void LoadList()
+        void LoadList()
         {
             DataContext.LoadTestCars();
             Carslist.ItemsSource = null;
-            Carslist.ItemsSource = DataContext.Cars;
+            Carslist.ItemsSource = new RestService().GetCars();
         }
 
         void Handle_SearchButtonPressed(object sender, System.EventArgs e)
         {
-            var carsSearched = DataContext.Cars.Where(c => c.Model.ToUpper().Contains(SearchCar.Text.ToUpper()) || c.Description.ToUpper().Contains(SearchCar.Text.ToUpper()) || c.Brand.ToUpper().Contains(SearchCar.Text.ToUpper())).ToList();
+            string searchtext = SearchCar.Text.ToUpper();
+            var carsSearched = new RestService().GetCars().Where(c => c.Model.ToUpper().Contains(searchtext) || c.Description.ToUpper().Contains(searchtext) || c.Brand.ToUpper().Contains(searchtext)).ToList();
             Carslist.ItemsSource = carsSearched;
         }
-
         void onAdd(object sender, EventArgs e) => Navigation.PushAsync(new AddCar());
-
-
         private void messageCallBack(Page obj) => LoadList();
-
+        private void OnFavoritenClicked(object sender, EventArgs args) => DisplayAlert("Auto favorito", (new DatabaseManager().AddFavoriteCar((Car)((Button)sender).BindingContext)) ? "Auto favorito agregado con exito" : "El auto ya se encuentra en favoritos", "Ok");
     }
 }

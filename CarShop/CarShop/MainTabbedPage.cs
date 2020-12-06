@@ -11,8 +11,8 @@ namespace CarShop
         public MainTabbedPage()
         {
             Children.Add(new CarsForSale());
+            Children.Add(new NearCars());
             Children.Add(new MyInfo());
-            Children.Add(new SellCar());
             Title = "Sell My Car MX";
         }
     }

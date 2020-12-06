@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarShop.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,19 @@ namespace CarShop.Views
         public MyInfo()
         {
             InitializeComponent();
-            Title = "my info";
+            Title = "Mis Favoritos";
+            loadData();
+        }
+
+        private void loadData() {
+            Carslist.ItemsSource = null;
+            Carslist.ItemsSource = new DatabaseManager().GetFavoriteCars();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            loadData();
         }
     }
 }

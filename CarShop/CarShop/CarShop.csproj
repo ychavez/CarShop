@@ -11,15 +11,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="4.8.0.1687" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\GeolocatorPage.xaml.cs">
-      <DependentUpon>GeolocatorPage.xaml</DependentUpon>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Microsoft\Xamarin\NuGet\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\NearCars.xaml.cs">
+      <DependentUpon>NearCars.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MyInfo.xaml.cs">
+      <DependentUpon>MyInfo.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -27,16 +38,13 @@
     <EmbeddedResource Update="Views\AddCar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GeolocatorPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\CarsForSale.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MyInfo.xaml">
+    <EmbeddedResource Update="Views\NearCars.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SellCar.xaml">
+    <EmbeddedResource Update="Views\MyInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

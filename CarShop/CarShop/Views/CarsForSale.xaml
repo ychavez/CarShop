@@ -18,13 +18,24 @@
            FontSize="Medium"
            FontAttributes="Italic"
                    x:Name="SearchCar"/>
-
-        <ListView x:Name="Carslist" RowHeight = "100">
-
+        <ListView x:Name="Carslist" RowHeight = "100"  IsPullToRefreshEnabled="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding PhotoUrl}"  Text="{Binding Model}" Detail="{Binding Description}">
-                    </ImageCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Label Text="{Binding Id}" IsVisible="False"/>
+                            <Image Source="{Binding PhotoUrl}"/>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Brand}"/>
+                                <Label Text="{Binding Model}" />
+                                </StackLayout>
+                                <Label Text="{Binding Description}" />
+                                <Label Text="{Binding Price, StringFormat='{0:C}'}"  />
+                            </StackLayout>
+                            <Button Text="Favorito" HorizontalOptions="EndAndExpand" Clicked="OnFavoritenClicked" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
