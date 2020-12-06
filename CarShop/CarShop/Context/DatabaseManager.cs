@@ -18,16 +18,16 @@ namespace CarShop.Context
         {
             db = DependencyService.Get<ISQLite>().GetConnection();
 
-            if(!(TableExists("FavoriteCar")))
-                 db.CreateTable<Car>();
+            if (!(TableExists("Car")))
+                db.CreateTable<Car>();
         }
 
         public bool TableExists(string tableName)
         {
-            TableMapping map = new TableMapping(typeof(SqlDbType)); 
-            object[] ps = new object[0]; 
+            TableMapping map = new TableMapping(typeof(SqlDbType));
+            object[] ps = new object[0];
 
-            int tableCount = db.Query(map, "SELECT * FROM sqlite_master WHERE type = 'table' AND name = '" + tableName + "'", ps).Count; 
+            int tableCount = db.Query(map, "SELECT * FROM sqlite_master WHERE type = 'table' AND name = '" + tableName + "'", ps).Count;
             if (tableCount == 0)
                 return false;
             else if (tableCount == 1)
@@ -36,11 +36,18 @@ namespace CarShop.Context
                 throw new Exception($"Hay mas de una tabla con el nombre {tableName} en la base de datos", null);
         }
 
-        public List<Car> GetFavoriteCars() => db.Query<Car>("Select * from FavoriteCar");
+        public List<Car> GetFavoriteCars() => db.Query<Car>("Select * from Car");
 
-        public Car GetFavoriteCars(int id) => db.Query<Car>($"Select * from FavoriteCar where id = {id}").First();
-
-        public void AddFavoriteCar(int id) => db.Insert(GetFavoriteCars(id));
+        public bool AddFavoriteCar(Car car)
+        {
+            if (db.Query<Car>($"Select * from Car where id = {car.Id}").Count() > 0)
+            {
+                db.Insert(car);
+                return true;
+            }
+            else
+                return false;
+        }
 
     }
 }

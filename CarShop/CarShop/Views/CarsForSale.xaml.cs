@@ -36,9 +36,6 @@ namespace CarShop.Views
         }
         void onAdd(object sender, EventArgs e) => Navigation.PushAsync(new AddCar());
         private void messageCallBack(Page obj) => LoadList();
-        private void OnFavoritenClicked(object sender, EventArgs args)
-        {
-            var favoriteID = ((Car)((Button)sender).BindingContext).Id;
-        }
+        private void OnFavoritenClicked(object sender, EventArgs args) => DisplayAlert("Auto favorito", (new DatabaseManager().AddFavoriteCar((Car)((Button)sender).BindingContext)) ? "Auto favorito agregado con exito" : "El auto ya se encuentra en favoritos", "Ok");
     }
 }
