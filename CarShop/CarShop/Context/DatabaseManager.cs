@@ -40,8 +40,7 @@ namespace CarShop.Context
 
         public bool AddFavoriteCar(Car car)
         {
-            if (db.Query<Car>($"Select * from Car where id = {car.Id}").Count() > 0)
-            {
+            if (db.Query<Car>($"Select * from Car where id = {car.Id}").Count() == 0) { 
                 db.Insert(car);
                 return true;
             }

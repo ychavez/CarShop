@@ -16,7 +16,7 @@ namespace CarShop.Views
         public MyInfo()
         {
             InitializeComponent();
-            Title = "My info";
+            Title = "Mis Favoritos";
             loadData();
         }
 

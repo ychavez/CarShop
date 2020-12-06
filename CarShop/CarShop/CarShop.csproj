@@ -26,9 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\GeolocatorPage.xaml.cs">
-      <DependentUpon>GeolocatorPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\NearCars.xaml.cs">
       <DependentUpon>NearCars.xaml</DependentUpon>
     </Compile>
@@ -39,9 +36,6 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\AddCar.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\GeolocatorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CarsForSale.xaml">
