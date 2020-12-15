@@ -4,7 +4,5 @@
              x:Class="CarShop.Views.GeolocatorPage">
     <ContentPage.Content>
 
-    
-
     </ContentPage.Content>
 </ContentPage>

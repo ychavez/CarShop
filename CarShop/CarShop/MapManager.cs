@@ -14,7 +14,6 @@ namespace CarShop
 
         public static Position GetXamPosition(Plugin.Geolocator.Abstractions.Position position)  =>  new Position(position.Latitude, position.Longitude);
         
-
         public Map GetMap(bool CurrentPosition, Position position, Circle circle = null, List<Pin> Pins = null)
         {
             var mapSpam = MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(30));
